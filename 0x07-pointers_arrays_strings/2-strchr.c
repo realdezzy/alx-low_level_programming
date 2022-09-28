@@ -9,17 +9,16 @@ include "main.h"
   */
 char *_strchr(char *s, char c)
 {
-	while (*s != '\0')
+	int l, i;
+
+	l = 0;
+	while (s[l] != '\0')
+		l++;
+	for (i = 0; i <= l; i++, s++)
 	{
 		if (*s == c)
-		{
 			return (s);
-		}
-		s++;
 	}
-	if (*s == c)
-	{
-		return (s);
-	}
-return (0);
+	return (0);
 }
+
