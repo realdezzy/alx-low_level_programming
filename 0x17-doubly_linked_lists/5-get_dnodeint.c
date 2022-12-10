@@ -6,7 +6,7 @@
   * @head: Pointer to first node
   * @index: index number of node
   *
-  * Returns: Node at index
+  * Return: Node at index
   */
 
 dlistint_t *get_dnodeint_at_index(dlistint_t *head, unsigned int index)
