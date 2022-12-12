@@ -1,5 +1,12 @@
 #include <stdio.h>
 
+/**
+  * rev_string - Reverses string
+  * @s: string param
+  *
+  * Return: void
+  */
+
 void rev_string(char *s)
 {
     int len, half;
