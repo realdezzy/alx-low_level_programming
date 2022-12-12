@@ -27,8 +27,4 @@ void rev_string(char *s)
 
     puts(s);
 
-}
-
-int main(void){
-    rev_string("123456");
-}
+  }
