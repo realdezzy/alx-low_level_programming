@@ -1,19 +1,20 @@
-NAME:= school
-OBJ:= $(wildcard *.o)
-RM:= rm
-CC:=gcc
-SRC:=$(wildcard *.c)
-VIM:= $(wildcard *.sw[op])
-EMACS:= $(wildcard *~)
+CC = gcc
+SRC = main.c school.c
+OBJ = $(SRC:.c=.o)
+NAME = school
+RM = rm -f
 
-all:
-	$(CC) $(SRC) -o $(NAME)
-clean:                  
-	$(RM) -r $(VIM) $(EMACS) $(NAME)
+all: $(OBJ)
+	$(CC) $(OBJ) -o $(NAME)
+
+clean:
+	$(RM) *~ $(NAME)
+
 oclean:
 	$(RM) $(OBJ)
-fclean:
-	$(RM) $(VIM) $(EMACS) $(OBJ) $(NAME)
 
-re: clean
-	$(CC) $(SRC) -o $(NAME)
+fclean:
+	$(RM) *~ $(NAME) 
+	$(RM) $(OBJ)
+
+re: oclean all
