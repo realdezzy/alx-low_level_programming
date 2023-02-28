@@ -1,10 +1,10 @@
-NAME:= school
-OBJ:= $(SRC:.c=.o)
-RM:= rm -f
-CC:=gcc
+NAME = school
+OBJ = $(SRC:.c=.o)
+RM = rm -f
+CC = gcc
 SRC = main. school.c
 VIM = $(wildcard *.sw[op])
-EMACS = $(wildcard *~)
+EMACS = *~
 CFLAGS = -Wall -Werror -Wextra -pedantic
 
 all: $(OBJ)
@@ -17,6 +17,7 @@ oclean:
 	$(RM) $(OBJ)
 
 fclean:
-	$(RM) $(VIM) $(EMACS) $(OBJ) $(NAME)
+	$(RM) $(EMACS) $(NAME)
+	$(RM) $(OBJ)
 
 re: oclean all
