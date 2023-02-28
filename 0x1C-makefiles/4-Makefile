@@ -3,21 +3,20 @@ OBJ = $(SRC:.c=.o)
 RM = rm -f
 CC = gcc
 SRC = main. school.c
-VIM = $(wildcard *.sw[op])
-EMACS = *~
+TEMP = *~
 CFLAGS = -Wall -Werror -Wextra -pedantic
 
 all: $(OBJ)
 	$(CC) $(CFLAGS) $(OBJ) -o $(NAME)
 
 clean:
-	$(RM) $(VIM) $(EMACS) $(NAME)
+	$(RM) $(TEMP) $(NAME)
 
 oclean:
 	$(RM) $(OBJ)
 
 fclean:
-	$(RM) $(EMACS) $(NAME)
+	$(RM) $(TEMP) $(NAME)
 	$(RM) $(OBJ)
 
 re: oclean all
