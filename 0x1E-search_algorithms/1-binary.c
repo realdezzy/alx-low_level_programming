@@ -39,17 +39,15 @@ int binary_search_min(int *array, int first, int last, int value)
 
 	if (first > last)
 		return (-1);
+
+	print_array(array, first, last);
+	mid = (first + last) / 2;
+	if (value == array[mid])
+		return (mid);
+	else if (value > array[mid])
+		return (binary_search_min(array, mid + 1, last, value));
 	else
-	{
-		print_array(array, first, last);
-		mid = (first + last) / 2;
-		if (value == array[mid])
-			return (mid);
-		else if (value > array[mid])
-			return (binary_search_min(array, mid + 1, last, value));
-		else
-			return (binary_search_min(array, first, mid - 1, value));
-	}
+		return (binary_search_min(array, first, mid - 1, value));
 }
 
 /**
